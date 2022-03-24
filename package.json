@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FilosofiaCodigo/nft-collection-api.git"
+    "url": "git+https://github.com/JotaEle123/api3.git"
   },
   "keywords": [
     "nft",
@@ -27,10 +27,10 @@
     "json",
     "api"
   ],
-  "author": "Filosofía Código",
+  "author": "JLSoto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FilosofiaCodigo/nft-collection-api/issues"
+    "url": "https://github.com/JotaEle123/api3/issues"
   },
-  "homepage": "https://github.com/FilosofiaCodigo/nft-collection-api#readme"
+  "homepage": "https://github.com/JotaEle123/api3#readme"
 }
