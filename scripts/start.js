@@ -1,6 +1,6 @@
 var MAX_SUPPLY = null
 const CONTRACT_ADDRESS = "0x215E40F97541c93a549D8c19EAEA6b6e13104989"
-const PORT = 80
+const PORT = 8888
 const IS_REVEALED = true
 const UNREVEALED_METADATA = {
   "name":"Unrevealed Croc",
@@ -13,7 +13,7 @@ const fs = require('fs')
 const express = require('express')
 const Web3 = require('web3')
 require('dotenv').config()
-const abi = require('./Contract.json').abi
+const abi = require('../Contract.json').abi
 const Contract = require('web3-eth-contract')
 Contract.setProvider(process.env.ROPSTEN_RPC_URL)
 const contract = new Contract(abi, CONTRACT_ADDRESS)
