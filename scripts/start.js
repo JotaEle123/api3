@@ -20,7 +20,7 @@ const contract = new Contract(abi, CONTRACT_ADDRESS)
 
 const app = express()
 
-const PORT = process.env.PORT;
+app.set("port" , process.env.PORT || 3000);
 
 app.use(express.static(__dirname + 'public'))
 app.use('/unrevealed', express.static(__dirname + '/unrevealed'));
@@ -28,8 +28,8 @@ app.use('/unrevealed', express.static(__dirname + '/unrevealed'));
 async function initAPI() {
   MAX_SUPPLY = parseInt(await contract.methods.MAX_SUPPLY().call())
   console.log("MAX_SUPPLY is: " + MAX_SUPPLY)
-  app.listen(PORT, () => {
-    console.log(`Listening to port ${PORT}`)
+  app.listen(app.get("port"), ()=> {
+    console.log(`Listening to port`, app.get("port"))
   })
 }
 async function serveMetadata(res, nft_id) {
