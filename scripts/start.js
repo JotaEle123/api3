@@ -20,7 +20,7 @@ const contract = new Contract(abi, CONTRACT_ADDRESS)
 
 const app = express()
 
-app.set("port" , process.env.PORT || 80);
+app.set("port" , process.env.PORT || 3000);
 
 app.use(express.static(__dirname + 'public'))
 app.use('/unrevealed', express.static(__dirname + '/unrevealed'));
