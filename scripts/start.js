@@ -1,6 +1,6 @@
 var MAX_SUPPLY = null
 const CONTRACT_ADDRESS = "0x215E40F97541c93a549D8c19EAEA6b6e13104989"
-
+const PORT = 3000
 const IS_REVEALED = true
 const UNREVEALED_METADATA = {
   "name":"Unrevealed Croc",
@@ -20,7 +20,6 @@ const contract = new Contract(abi, CONTRACT_ADDRESS)
 
 const app = express()
 
-app.set("port" , process.env.PORT || 3000);
 
 app.use(express.static(__dirname + 'public'))
 app.use('/unrevealed', express.static(__dirname + '/unrevealed'));
@@ -29,7 +28,7 @@ async function initAPI() {
   MAX_SUPPLY = parseInt(await contract.methods.MAX_SUPPLY().call())
   console.log("MAX_SUPPLY is: " + MAX_SUPPLY)
   app.listen(app.get("port"), ()=> {
-    console.log(`Listening to port`, app.get("port"))
+    console.log(`Listening to port ${PORT}`)
   })
 }
 async function serveMetadata(res, nft_id) {
