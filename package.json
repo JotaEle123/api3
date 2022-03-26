@@ -6,6 +6,7 @@
   "dependencies": {
     "@kleros/file-to-ipfs": "^0.3.2",
     "dotenv": "^10.0.0",
+    "http": "0.0.1-security",
     "web3": "^1.5.2"
   },
   "devDependencies": {},
